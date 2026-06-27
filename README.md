@@ -1,23 +1,19 @@
-# Developer Challenge - IA para Analisis de Comprobantes
+# Receipt Intelligence Platform
 
-Solucion monorepo end-to-end para analisis de comprobantes con chat, persistencia y explotacion de datos.
+Plataforma full stack para analizar comprobantes mediante chat, extraccion
+estructurada, persistencia y consultas analiticas. El repositorio es un monorepo
+ejecutable con Next.js, FastAPI, PostgreSQL y Docker Compose.
 
-## 1) Objetivo del reto y cobertura
+## 1) Capacidades
 
-### Requisitos minimos
-- UI tipo chat: **implementado** (`apps/frontend`)
-- Envio de texto y archivos: **implementado** (`POST /api/v1/chat/message`)
-- Analisis via Agent (real o simulado): **implementado** (Agent mock JSON-RPC)
-- JSON estructurado: **implementado** (contratos + validacion)
-- Persistencia en BD: **implementado** (PostgreSQL)
-- Consultas basicas desde chat: **implementado** (comprobante, buscar, resumen)
-
-### Bonus
-- Streaming de respuestas: **implementado** (SSE `POST /api/v1/chat/message/stream`)
-- Validaciones adicionales: **implementado** (tamano/mime/ext + validaciones de negocio)
-- Correccion manual desde UI: **implementado** (editor con `PATCH /api/v1/receipts/{id}`)
-- Insights mas elaborados: **implementado** (`vendors`, `trend`, `anomalies`)
-- Manejo de errores avanzado: **implementado** (errores estructurados + reintentos al Agent)
+- Chat con envio de texto y archivos (`POST /api/v1/chat/message`).
+- Extraccion mediante un agente desacoplado por JSON-RPC 2.0.
+- Contratos JSON, validacion de archivos y reglas de negocio.
+- Persistencia normalizada en PostgreSQL.
+- Streaming de respuestas mediante Server-Sent Events.
+- Correccion manual desde la interfaz.
+- Insights por proveedor, tendencia y anomalias.
+- Errores estructurados y reintentos frente a fallos del agente.
 
 ## 2) Arquitectura
 
